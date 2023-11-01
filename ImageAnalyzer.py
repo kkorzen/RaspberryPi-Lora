@@ -46,9 +46,3 @@ class ImageAnalyzer():
                 rgb_dict["blue"] += b
 
         return {color: round(val/total_size) for color, val in rgb_dict.items()}
-
-
-anal = ImageAnalyzer()
-anal.PassImage("RGB_Analysis_PIL/picture2.jpg")
-d = anal.GetAverageRGB()
-print(d)
