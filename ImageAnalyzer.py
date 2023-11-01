@@ -46,3 +46,4 @@ class ImageAnalyzer():
                 rgb_dict["blue"] += b
 
         return {color: round(val/total_size) for color, val in rgb_dict.items()}
+
