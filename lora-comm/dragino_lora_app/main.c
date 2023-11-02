@@ -175,9 +175,10 @@ uint32_t  freq = 868100000; // in Mhz! (868.1)
 
 
 FILE *plik;
+char current_directory[1024];
 
-char plik_read[] = "read.txt";
-char plik_write[] = "write.txt";
+char* plik_read = realpath("read.txt", NULL);
+char* plik_write = realpath("write.txt", NULL);
         
 byte packet_to_send_from_plik[30];
 
