@@ -22,8 +22,8 @@ class ImageAnalyzer():
             height = self.image.size[1]
             return (width, height)
         except AttributeError:
-            print(f"ERROR - GetSize(): Cannot get size of an object with type 
-                  {type(self.image)}")
+            print(
+                f"ERROR - GetSize(): Cannot get size of an object with type {type(self.image)}")
             return (ERROR_VAL, ERROR_VAL)
 
     def GetPath(self):
@@ -46,4 +46,3 @@ class ImageAnalyzer():
                 rgb_dict["blue"] += b
 
         return {color: round(val/total_size) for color, val in rgb_dict.items()}
-
