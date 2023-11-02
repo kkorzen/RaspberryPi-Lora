@@ -13,6 +13,6 @@ ia.PassImage(RPI_PHOTO_PATH)
 rgbs = ia.GetAverageRGB()
 
 # Write calculated average rgb to the text file 'rgbs.txt'
-with open("rgbs.txt", "w", encoding = "UTF-8") as file:
+with open("lora-comm/dragino_lora_app/read.txt", "w", encoding="UTF-8") as file:
     for key, val in rgbs.items():
-        file.write(f"{key}:{val}\n")
+        file.write(f"{key}= {val} ")
