@@ -174,10 +174,13 @@ sf_t sf = SF7;
 uint32_t  freq = 868100000; // in Mhz! (868.1)
 
 
-FILE *plik;        
+FILE *plik;
+
+char plik_read[] = "test.txt";
+char plik_write[] = "write.txt";
+        
 byte packet_to_send_from_plik[30];
 
-byte hello[30]="HELLO";
 
 void die(const char *s)
 {
@@ -366,6 +369,15 @@ void receivepacket() {
             printf("Length: %i", (int)receivedbytes);
             printf("\n");
             printf("Payload: %s\n", message);
+            
+            plik = fopen(plik_write,"w");
+            if(plik == NULL){
+                printf("Nie mozna otworzyc\n");
+                return;
+            }
+            fprintf(plik, "%s", message);
+            fclose(plik);
+            
 
         } // received a message
 
@@ -448,7 +460,7 @@ int main (int argc, char *argv[]) {
     if (!strcmp("sender", argv[1])) {
    
         
-        plik = fopen("test.txt", "r");
+        plik = fopen(plik_read, "r");
         if(plik == NULL){
             printf("Nie mozna otworzy pliku.\n");
             return 1;
