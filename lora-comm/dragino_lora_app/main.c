@@ -375,7 +375,7 @@ void receivepacket() {
                 printf("Nie mozna otworzyc\n");
                 return;
             }
-            fprintf(plik, "%s", message);
+            fprintf(plik, "%s\n", message);
             fclose(plik);
             
 
