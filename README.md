@@ -45,9 +45,12 @@ make
 ```
 
 Remember that every change in the main.c source file requiers performing steps 3. and 4. once again.
+<<<<<<< HEAD
 
 
 
 
 
 
+=======
+>>>>>>> lora-comm
