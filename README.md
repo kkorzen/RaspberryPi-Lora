@@ -73,6 +73,7 @@ The most important file is the *main.c* file including all the code needed for t
 - main.o -- object file being the effect of comipilation
 - dragin_lora_app -- executable file ready to be run
 
+Located in the main directory file **app.py** is responsible for taking a shot using PiCamera, calculate its average RGB and finally writing results into text file. Its also responsible for generating "RPi-camphoto.jpg" file in the main directory.
 
 ## Starting the application
 
