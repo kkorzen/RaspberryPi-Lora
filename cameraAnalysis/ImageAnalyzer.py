@@ -35,14 +35,14 @@ class ImageAnalyzer():
         if width == ERROR_VAL:
             return ("ERROR - GetAverageRGB(): Cannot get size of an image. Please chcek the file path.")
 
-        rgb_dict = {"red": 0, "green": 0, "blue": 0}
+        rgb_dict = {"R": 0, "G": 0, "B": 0}
         total_size = width * height
 
         for i in range(width):
             for j in range(height):
                 r, g, b = self.image.getpixel((i, j))
-                rgb_dict["red"] += r
-                rgb_dict["green"] += g
-                rgb_dict["blue"] += b
+                rgb_dict["R"] += r
+                rgb_dict["G"] += g
+                rgb_dict["B"] += b
 
         return {color: round(val/total_size) for color, val in rgb_dict.items()}
