@@ -1,3 +1,4 @@
+#=================================
 # FOR THE FIRST RUN
 #
 #if [! -d "venv" ]; then
@@ -9,6 +10,8 @@
 #pip3 install RPi.GPIO
 #pip3 install picamera
 #pip3 install Pillow
+
+#=================================
 
 python3 app.py
 
