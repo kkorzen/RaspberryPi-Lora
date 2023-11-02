@@ -26,7 +26,7 @@ sudo dpkg -i wiringpi-2.46-1.deb
 
 2. Downloading the lora transmit code:
 ```
-wget https://codeload.ghttps://codeload.github.com/dragino/rpi-lora-tranceiver/zip/master
+wget https://codeload.github.com/dragino/rpi-lora-tranceiver/zip/master
 
 unzip master
 ```
