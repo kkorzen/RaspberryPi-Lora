@@ -176,7 +176,7 @@ uint32_t  freq = 868100000; // in Mhz! (868.1)
 
 FILE *plik;
 
-char plik_read[] = "test.txt";
+char plik_read[] = "read.txt";
 char plik_write[] = "write.txt";
         
 byte packet_to_send_from_plik[30];
