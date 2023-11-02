@@ -1,3 +1,6 @@
+# dragino lora testing
+# Single lora testing app
+
 CC=g++
 CFLAGS=-c -Wall
 LIBS=-lwiringPi
