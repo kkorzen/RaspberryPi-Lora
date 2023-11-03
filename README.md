@@ -20,7 +20,7 @@ Look also into the PDF file in PDF-DocFiles directory for a specific step-by-ste
 ## Quick setup
 Quick setup is recommended to test the functionality of the LoRa librarry. Although all of the code below can be find in the links given above and in the mentioned PDF file, we decide to also write it here, because we value your time. :)
 
-1. Installation of WiringPi.h library for Raspberry Pi 3 - written in C. For your convinience you can just run **wiringpi-install.sh**:
+1. Installation of WiringPi.h library for Raspberry Pi 3 - written in C.
 ```
 cd /tmp
 
