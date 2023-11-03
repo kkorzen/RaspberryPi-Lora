@@ -3,7 +3,7 @@
 #source_directory=$(pwd)
 #
 #if [ $(uname -m) == armv7l ];then
-#       echo "You have 32bit architecture, which means it matches for this progr                                                                                                             am"
+#       echo "You have 32bit architecture, which means it matches for this program"
 #       cd /tmp
 #       wget https://unicorn.drogon.net/wiringpi-2.46-1.deb
 #       sudo dpkg -i wiringpi-2.46-1.deb
