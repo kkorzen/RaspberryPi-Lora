@@ -1,7 +1,20 @@
 #=================================
 # FOR THE FIRST RUN
 #
-#if [! -d "venv" ]; then
+#if [ $(uname -m) == aarch32 ];then 
+#	echo "You have 32bit architecture, which means it matches for this program"
+#	cd /tmp
+#	wget https://unicorn.drogon.net/wiringpi-2.46-1.deb
+#	sudo dpkg -i wiringpi-2.46-1.deb
+#else
+#	echo "You have 64bit architecture, which is not match for this program"
+#	echo "Please install 32bit OS architecture."
+#	exit 0
+#fi
+#
+#cd source
+#
+#if [ ! -d "$venv" ]; then
 #	python3 -m venv venv
 #fi
 #
@@ -10,7 +23,8 @@
 #pip3 install RPi.GPIO
 #pip3 install picamera
 #pip3 install Pillow
-
+#
+#deactivate
 #=================================
 
 python3 app.py
