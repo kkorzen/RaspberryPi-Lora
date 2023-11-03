@@ -87,6 +87,8 @@ Run the **setup_tx.sh** on your tranceiver device (the one with camera).
 
 Run the **setup_rx.sh** on your receiver device.
 
+Tip: it is better to run these scripts through the terminal using the ```sudo bash setup_name_file.sh``` command.
+
 ### First run
 If it's the first time your Raspberry runs our program, please make sure that you uncomment code written between the '='-lines in both files: **setup_tx.sh** and **setup_rx.sh**.
 
