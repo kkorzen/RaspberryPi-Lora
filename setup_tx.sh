@@ -4,6 +4,7 @@
 #
 #if [ $(uname -m) == armv7l ];then
 #       echo "You have 32bit architecture, which means it matches for this program"
+#       # Three lines below are responsible for  installing the WiringPi library
 #       cd /tmp
 #       wget https://unicorn.drogon.net/wiringpi-2.46-1.deb
 #       sudo dpkg -i wiringpi-2.46-1.deb
