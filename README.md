@@ -1,9 +1,12 @@
 # RaspberryPi_LoRa_Communication
 ---
 ## Introduction
-Project was being developed during the second semester of Master studies in Embedded System Field on **Warsaw Univeristy of Technology**. Project was a part of a total of three mini-projects as part of the **Internet of Things** (pol. *Internet Rzeczy*) classes.
+Project was being developed during the second semester of Master studies in Embedded Systems field on **Warsaw Univeristy of Technology**. Project was a part of a total of three mini-projects as part of the **Internet of Things** (pol. *Internet Rzeczy*) classes.
 
-The main goal of the project was to establish a connection between **two Raspberry Pi 3 SBCs** (ang. Single Board Computers) using a LoRa protocol. Every Raspbbery Pi had its own Dragino LoRa/GPS hat which enables setting up a communiaction. As mentioned, the hat is equipped with a GPS module, although it wasn't tested and used in this project. For data sent we choce an avarge RGB value of the picture taken by PiCamera.
+The main goal of the project was to establish a connection between **two Raspberry Pi 3 SBCs** (ang. Single Board Computers) using a LoRa protocol. Every Raspbbery Pi had its own Dragino LoRa/GPS hat which enables setting up a communiaction. As mentioned, the hat is equipped with a GPS module, although it wasn't tested and used in this project. For data sent we chose an avarge RGB value of the picture taken by PiCamera.
+
+## Before moving on into README
+The recommended OS for this project is **Raspbian OS 32-bit** as the WiringPi library works best on this software. Make sure you've installed the right OS as our program may not work on the 64-bit version.
 
 ## Important links & files
 
@@ -12,10 +15,10 @@ Below are the two most important links which content was heavily "explored" duri
 [WiringPi library docs](http://wiringpi.com/)\
 [WiringPi news](http://wiringpi.com/news/)
 
-Look also into the PDF file in PDF-DocFiles directory for a specific step-by-step installation. In the project **chapter 4**, titled <u>Example3: Two RPI use LoRa to transmit to each other</u>, was used.
+Look also into the PDF file in PDF-DocFiles directory for a specific step-by-step installation. In the project, **chapter 4** titled <u>Example3: Two RPI use LoRa to transmit to each other</u>, was used.
 
 ## Quick setup
-Quick setup is recommended to test the functionality of the LoRa librarry. Although all of the code below can be find in the links given above and in the mentioned PDF file, we decide to also write it here in the recommended, because we value your time. :)
+Quick setup is recommended to test the functionality of the LoRa librarry. Although all of the code below can be find in the links given above and in the mentioned PDF file, we decide to also write it here, because we value your time. :)
 
 1. Installation of WiringPi.h library for Raspberry Pi 3 - written in C. For your convinience you can just run **wiringpi-install.sh**:
 ```
@@ -64,7 +67,7 @@ Directory "lora-comm" contains all the files used in the process of communicatio
 ---
 
 **IMPORTANT:**\
-Files used in this project are located in the "dragino_lora_app" directory. The other two directories are included into the package delivered by the manufacturer of the LoRa module.
+Files for LoRa communication used in this project are located in the "dragino_lora_app" directory. The other two directories are included into the package delivered by the manufacturer of the LoRa module.
 
 ---
 ---
@@ -85,7 +88,7 @@ Run the **setup_tx.sh** on your tranceiver device (the one with camera).
 Run the **setup_rx.sh** on your receiver device.
 
 ### First run
-If it's the first time your Raspberry runs our program, please make sure that you uncommenct code written between the '='-lines in both files: **setup_tx.sh** and **setup_rx.sh**.
+If it's the first time your Raspberry runs our program, please make sure that you uncomment code written between the '='-lines in both files: **setup_tx.sh** and **setup_rx.sh**.
 
 ### Second and every next run
 If it's not the first time your Raspberry runs our program, just run **setup_tx.sh** and **setup_rx.sh** respectively on the tranceiver and receiver device. If you edited these files before, make sure you commented sections mentioned above.
@@ -93,4 +96,4 @@ If it's not the first time your Raspberry runs our program, just run **setup_tx.
 ## Conclusion & future development
 We highly recommend to experiment and modify both hardware and software. Maybe clear the code by writing your own libraries or change PiCamera to a different sensor. Feel free to do with this project whatever you want. :)
 
-Probably this project will no longer by supported by us but as we give it to another engineering it's highly plausible that they would upgrade already existing solutions or add something new. We would try to link their GitHub repos down below: ........
+Probably this project will no longer be supported by us but as we give it to another engineering team it's highly plausible that they would upgrade already existing solutions or add something new. We would try to link their GitHub repos down below: ........
