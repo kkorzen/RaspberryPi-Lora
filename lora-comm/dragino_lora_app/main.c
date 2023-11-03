@@ -20,6 +20,7 @@
 
 #include <wiringPi.h>
 #include <wiringPiSPI.h>
+#include <unistd.h>
 
 
 // #############################################
@@ -38,14 +39,14 @@
 #define REG_MODEM_CONFIG            0x1D
 #define REG_MODEM_CONFIG2           0x1E
 #define REG_MODEM_CONFIG3           0x26
-#define REG_SYMB_TIMEOUT_LSB  		0x1F
-#define REG_PKT_SNR_VALUE			0x19
+#define REG_SYMB_TIMEOUT_LSB            0x1F
+#define REG_PKT_SNR_VALUE                       0x19
 #define REG_PAYLOAD_LENGTH          0x22
 #define REG_IRQ_FLAGS_MASK          0x11
-#define REG_MAX_PAYLOAD_LENGTH 		0x23
+#define REG_MAX_PAYLOAD_LENGTH          0x23
 #define REG_HOP_PERIOD              0x24
-#define REG_SYNC_WORD				0x39
-#define REG_VERSION	  				0x42
+#define REG_SYNC_WORD                           0x39
+#define REG_VERSION                                     0x42
 
 #define PAYLOAD_LENGTH              0x40
 
@@ -53,7 +54,7 @@
 #define REG_LNA                     0x0C
 #define LNA_MAX_GAIN                0x23
 #define LNA_OFF_GAIN                0x00
-#define LNA_LOW_GAIN		    	0x20
+#define LNA_LOW_GAIN                    0x20
 
 #define RegDioMapping1                             0x40 // common
 #define RegDioMapping2                             0x41 // common
@@ -175,11 +176,13 @@ uint32_t  freq = 868100000; // in Mhz! (868.1)
 
 
 FILE *plik;
-char current_directory[1024];
+
 
 char* plik_read = realpath("read.txt", NULL);
-char* plik_write = realpath("write.txt", NULL);
-        
+char plik_write[] = "write.txt";
+
+
+
 byte packet_to_send_from_plik[30];
 
 
@@ -238,7 +241,7 @@ static void opmodeLora() {
 
 void SetupLoRa()
 {
-    
+
     digitalWrite(RST, HIGH);
     delay(100);
     digitalWrite(RST, LOW);
@@ -357,7 +360,7 @@ void receivepacket() {
                 // Divide by 4
                 SNR = ( value & 0xFF ) >> 2;
             }
-            
+
             if (sx1272) {
                 rssicorr = 139;
             } else {
@@ -370,7 +373,7 @@ void receivepacket() {
             printf("Length: %i", (int)receivedbytes);
             printf("\n");
             printf("Payload: %s\n", message);
-            
+
             plik = fopen(plik_write,"w");
             if(plik == NULL){
                 printf("Nie mozna otworzyc\n");
@@ -378,7 +381,7 @@ void receivepacket() {
             }
             fprintf(plik, "%s\n", message);
             fclose(plik);
-            
+
 
         } // received a message
 
@@ -409,15 +412,15 @@ static void configPower (int8_t pw) {
 }
 
 
-static void writeBuf(byte addr, byte *value, byte len) {                                                       
-    unsigned char spibuf[256];                                                                          
-    spibuf[0] = addr | 0x80;                                                                            
-    for (int i = 0; i < len; i++) {                                                                         
-        spibuf[i + 1] = value[i];                                                                       
-    }                                                                                                   
-    selectreceiver();                                                                                   
-    wiringPiSPIDataRW(CHANNEL, spibuf, len + 1);                                                        
-    unselectreceiver();                                                                                 
+static void writeBuf(byte addr, byte *value, byte len) {
+    unsigned char spibuf[256];
+    spibuf[0] = addr | 0x80;
+    for (int i = 0; i < len; i++) {
+        spibuf[i + 1] = value[i];
+    }
+    selectreceiver();
+    wiringPiSPIDataRW(CHANNEL, spibuf, len + 1);
+    unselectreceiver();
 }
 
 void txlora(byte *frame, byte datalen) {
@@ -459,8 +462,8 @@ int main (int argc, char *argv[]) {
     SetupLoRa();
 
     if (!strcmp("sender", argv[1])) {
-   
-        
+
+
         plik = fopen(plik_read, "r");
         if(plik == NULL){
             printf("Nie mozna otworzy pliku.\n");
@@ -470,8 +473,8 @@ int main (int argc, char *argv[]) {
             printf("Odczyt: %s", (char *)packet_to_send_from_plik);
         }
         fclose(plik);
-        
-        
+
+
         opmodeLora();
         // enter standby mode (required for FIFO loading))
         opmode(OPMODE_STANDBY);
@@ -485,7 +488,7 @@ int main (int argc, char *argv[]) {
 
         if (argc > 2)
             strncpy((char *)packet_to_send_from_plik, argv[2], sizeof(packet_to_send_from_plik));
-            
+
 
         while(1) {
             txlora(packet_to_send_from_plik, strlen((char *)packet_to_send_from_plik));
@@ -500,7 +503,7 @@ int main (int argc, char *argv[]) {
         printf("Listening at SF%i on %.6lf Mhz.\n", sf,(double)freq/1000000);
         printf("------------------\n");
         while(1) {
-            receivepacket(); 
+            receivepacket();
             delay(1);
         }
 
