@@ -1,4 +1,4 @@
-# RaspberryPi_LoRa_Communication
+# RaspberryPi LoRa Communication README
 ---
 ## Introduction
 Project was being developed during the second semester of Master studies in Embedded Systems field on **Warsaw Univeristy of Technology**. Project was a part of a total of three mini-projects as part of the **Internet of Things** (pol. *Internet Rzeczy*) classes.
