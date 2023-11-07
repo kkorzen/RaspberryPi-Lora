@@ -1,7 +1,7 @@
 # RaspberryPi LoRa Communication README
 ---
 ## Introduction
-Project has being developed during the second semester of Master studies in Embedded Systems field on **Warsaw Univeristy of Technology**. Project was a part of a total of three mini-projects as part of the **Internet of Things** (pol. *Internet Rzeczy*) classes.
+Project was under development during the second semester of Master studies in Embedded Systems field on **Warsaw Univeristy of Technology**. Project was a part of a total of three mini-projects as part of the **Internet of Things** (pol. *Internet Rzeczy*) classes.
 
 The main goal of the project was to establish a connection between **two Raspberry Pi 3 SBCs** (ang. Single Board Computers) using a LoRa protocol. Every Raspbbery Pi had its own Dragino LoRa/GPS hat which enables setting up a communiaction. As mentioned, the hat is equipped with a GPS module, although it wasn't tested and used in this project. For data sent we chose an avarge RGB value of the picture taken by PiCamera.
 
