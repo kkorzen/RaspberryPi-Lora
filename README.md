@@ -3,7 +3,7 @@
 ## Introduction
 Project was under development during the second semester of Master studies in Embedded Systems field on **Warsaw Univeristy of Technology**. Project was a part of a total of three mini-projects as part of the **Internet of Things** (pol. *Internet Rzeczy*) classes.
 
-The main goal of the project was to establish a connection between **two Raspberry Pi 3 SBCs** (ang. Single Board Computers) using a LoRa protocol. Every Raspbbery Pi had its own Dragino LoRa/GPS hat which enables setting up a communiaction. As mentioned, the hat is equipped with a GPS module, although it wasn't tested and used in this project. For data sent we chose an avarge RGB value of the picture taken by PiCamera.
+The main goal of the project was to establish a connection between **two Raspberry Pi 3 SBCs** (ang. Single Board Computers) using a LoRa protocol. Every Raspbbery Pi had its own Dragino LoRa/GPS hat which enables setting up a communiaction. As mentioned, the hat is equipped with a GPS module, although it wasn't tested and used in this project. For data sent we chose an avarge RGB value of the picture taken by PiCamera. It is stored as a text-file. The file is then opened and the data is transmited via LoRa protocol to the receiver which writes an incoming messege into its own text-file.
 
 ## Before moving on into README
 The recommended OS for this project is **Raspbian OS 32-bit** as the WiringPi library works best on this software. Make sure you've installed the right OS as our program may not work on the 64-bit version.
@@ -61,7 +61,7 @@ Directory "cameraAnalysis" contains two files:
 - camera.py -- there is only one function responsible for taking a shot using PiCamera and storing it in the main directory.
 - ImageAnalyzer.py -- class written to make code clearer and easy-expandable. The main goal of this class is to calculate average RGB of an image but many other functionalities can by easily implemented.
 
-Directory "lora-comm" contains all the files used in the process of communication between two Raspberry Pis. 
+Directory "lora-comm" contains all the files used in the process of communication between two Raspberry Pis. As mentioned above all the necessary function are located in the **main.c** file. Feel free to add your own functionality, but be careful. It's a "fragile being". :)
 
 ---
 ---
