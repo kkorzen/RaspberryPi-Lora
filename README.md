@@ -61,7 +61,7 @@ Directory "cameraAnalysis" contains two files:
 - camera.py -- there is only one function responsible for taking a shot using PiCamera and storing it in the main directory.
 - ImageAnalyzer.py -- class written to make code clearer and easy-expandable. The main goal of this class is to calculate average RGB of an image but many other functionalities can by easily implemented.
 
-Directory "lora-comm" contains all the files used in the process of communication between two Raspberry Pis. As mentioned above all the necessary function are located in the **main.c** file. Feel free to add your own functionality, but be careful. It's a "fragile being". :)
+Directory "lora-comm" contains all the files used in the process of communication between two Raspberry Pis. As mentioned above all the necessary functions are located in the **main.c** file. Feel free to add your own functionality, but be careful. It's a "fragile being". :)
 
 ---
 ---
