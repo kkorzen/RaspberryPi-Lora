@@ -20,7 +20,9 @@ Look also into the PDF file in PDF-DocFiles directory for a specific step-by-ste
 ## Quick setup
 Quick setup is recommended to test the functionality of the LoRa librarry. Although all of the code below can be find in the links given above and in the mentioned PDF file, we decide to also write it here, because we value your time. :)
 
-1. Installation of WiringPi.h library for Raspberry Pi 3 - written in C.
+1. First of all, remember to make sure that the SPI, Serial Port and Serial Console interfaces are enabled in the Raspberry Pi Configuration. You can enter it using top-left corner menu or by typing **sudo raspi-config** in the terminal.
+
+2. Installation of WiringPi.h library for Raspberry Pi 3 - written in C.
 ```
 cd /tmp
 
@@ -29,27 +31,27 @@ wget https://unicorn.drogon.net/wiringpi-2.46-1.deb
 sudo dpkg -i wiringpi-2.46-1.deb
 ```
 
-2. Downloading the lora transceiver source files:
+3. Downloading the lora transceiver source files:
 ```
 wget https://codeload.github.com/dragino/rpi-lora-tranceiver/zip/master
 
 unzip master
 ```
 
-3. Run a make file.
+4. Run a make file.
 ```
 cd rpi-lora-tranceiver-master/dragino_lora_app
 
 make
 ```
 
-4. Run the app (sender or rec (receiver))
+5. Run the app (sender or rec (receiver))
 ```
 ./dragino_lora_app sender
 ./dragino_lora_app rec
 ```
 
-Remember that every change in the main.c source file requiers performing steps 3. and 4. once again.
+Remember that every change in the main.c source file requiers performing steps 4. and 5. once again.
 
 
 ## Project files description
