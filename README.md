@@ -100,4 +100,5 @@ If it's not the first time your Raspberry runs our program, just run **setup_tx.
 ## Conclusion & future development
 We highly recommend to experiment and modify both hardware and software. Maybe clear the code by writing your own libraries or change PiCamera to a different sensor. Feel free to do with this project whatever you want. :)
 
-Probably this project will no longer be supported by us but as we give it to another engineering team it's highly plausible that they would upgrade already existing solutions or add something new. We would try to link their GitHub repos down below: ........
+Probably this project will no longer be supported by us but as we give it to another engineering team it's highly plausible that they would upgrade already existing solutions or add something new. We would try to link their GitHub repos down below:
+- https://github.com/duxamoducis/RaspberryPi_LoRa
