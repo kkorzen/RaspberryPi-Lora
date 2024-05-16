@@ -102,3 +102,4 @@ We highly recommend to experiment and modify both hardware and software. Maybe c
 
 Probably this project will no longer be supported by us but as we give it to another engineering team it's highly plausible that they would upgrade already existing solutions or add something new. We would try to link their GitHub repos down below:
 - https://github.com/duxamoducis/RaspberryPi_LoRa
+- https://github.com/Bartek011/RaspberryPi_LoRa
